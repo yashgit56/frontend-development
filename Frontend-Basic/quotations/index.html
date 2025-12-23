@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Semantic HTML Visual Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    blockquote {
+      border-left: 4px solid #4CAF50;
+      padding-left: 15px;
+      color: #333;
+      background: #f9f9f9;
+      margin: 20px 0;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Semantic HTML – Visual Understanding</h1>
+
+  <!-- BLOCKQUOTE -->
+  <section>
+    <h2>1. blockquote (Long Quote)</h2>
+    <blockquote cite="https://www.brainyquote.com">
+      The only way to do great work is to love what you do.
+      If you haven't found it yet, keep looking. Don't settle.
+    </blockquote>
+    <p>— <cite>Steve Jobs Speech</cite></p>
+  </section>
+
+  <!-- Q -->
+  <section>
+    <h2>2. q (Inline Quote)</h2>
+    <p>
+      My mentor always says
+      <q>Consistency beats talent when talent is not consistent</q>
+      and I follow that rule.
+    </p>
+  </section>
+
+  <!-- ABBR -->
+  <section>
+    <h2>3. abbr (Abbreviation)</h2>
+    <p>
+      I am learning
+      <abbr title="HyperText Markup Language">HTML</abbr>,
+      <abbr title="Cascading Style Sheets">CSS</abbr>,
+      and
+      <abbr title="JavaScript">JS</abbr>.
+    </p>
+    <p>👉 Hover on the short words to see the full form.</p>
+  </section>
+
+  <!-- ADDRESS -->
+  <section>
+    <h2>4. address (Contact Information)</h2>
+    <address>
+      Written by Yash Vataliya<br>
+      Email: <a href="mailto:yash@example.com">yash@example.com</a><br>
+      Website: example.com
+    </address>
+  </section>
+
+  <!-- CITE -->
+  <section>
+    <h2>5. cite (Title of Work)</h2>
+    <p>
+      My favorite book is
+      <cite>The Alchemist</cite>
+      and my favorite movie is
+      <cite>Inception</cite>.
+    </p>
+  </section>
+
+  <!-- BDO -->
+  <section>
+    <h2>6. bdo (Text Direction Override)</h2>
+    <p>Normal text:</p>
+    <p>Hello World</p>
+
+    <p>Right-to-left using <bdo dir="rtl">Hello World</bdo></p>
+  </section>
+
+</body>
+</html>

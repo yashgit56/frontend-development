@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://via.placeholder.com/150" alt="Sample Image" />
+
+    <img src="https://via.placeholder.com/300x150" usemap="#example-map" alt="Clickable Image" />
+
+    <map name="example-map">
+    <area shape="rect" coords="0,0,150,150" href="https://example.com/1" alt="Link 1">
+    <area shape="rect" coords="150,0,300,150" href="https://example.com/2" alt="Link 2">
+    </map>
+
+    <!-- Already used in the previous example -->
+    <area shape="circle" coords="75,75,50" href="https://example.com/circle" alt="Circle Link">
+
+    <picture>
+        <source media="(max-width: 600px)" srcset="https://via.placeholder.com/150">
+        <source media="(min-width: 601px)" srcset="https://via.placeholder.com/300">
+        <img src="https://via.placeholder.com/300" alt="Responsive Image">
+    </picture>
+
+</body>
+</html>

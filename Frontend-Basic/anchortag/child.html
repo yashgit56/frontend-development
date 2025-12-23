@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHILD PAGE</title>
+</head>
+<body>
+
+  <h1>CHILD PAGE (New Tab)</h1>
+
+  <button onclick="attack()">Try to Control Opener</button>
+
+  <script>
+    function attack() {
+      if (window.opener) {
+        window.opener.document.body.style.background = 'red';
+        alert('I can control the parent page 😈');
+      } else {
+        alert('I CANNOT access the parent page 👍');
+      }
+    }
+  </script>
+
+</body>
+</html>

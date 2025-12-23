@@ -1,0 +1,71 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    background-color: aqua;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Nav Actions */
+.nav-actions {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Buttons */
+.nav-actions button {
+    padding: 8px 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.nav-actions button:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* Active click */
+.nav-actions button:active {
+    transform: scale(0.95);
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.small-container{
+    width: 250px;
+    height: 200px;
+    background-color: red;
+}
+
+.big-container{
+    width: 500px;
+    height: 200px;
+    background-color: green;
+}

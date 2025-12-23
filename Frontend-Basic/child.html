@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CHILD PAGE</title>
+  <style>
+    body {
+      background: #ffbe76;
+      padding: 20px;
+      font-family: Arial;
+    }
+    a {
+      display: block;
+      margin: 10px 0;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>CHILD PAGE (iframe)</h3>
+
+  <!-- SELF -->
+  <a href="page.html" target="_self">
+    _self → Open inside SAME iframe
+  </a>
+
+  <!-- PARENT -->
+  <a href="page.html" target="_parent">
+    _parent → Replace PARENT page
+  </a>
+
+  <!-- TOP -->
+  <a href="page.html" target="_top">
+    _top → Replace WHOLE browser window
+  </a>
+
+</body>
+</html>
