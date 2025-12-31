@@ -1,0 +1,94 @@
+<!-- A CSS pseudo-element is a keyword that can be added to a selector, to style a specific part of an element.
+
+Some common use for pseudo-elements:
+
+Style the first letter or first line, of an element
+Insert content before or after an element
+Style the markers of list items
+Style the user-selected portion of an element
+Style the viewbox behind a dialog box -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p::first-line {
+        color: red;
+        font-variant: small-caps;
+        font-size: 19px;
+      }
+
+      p::first-letter {
+        color: purple;
+        font-size: xx-large;
+      }
+
+      h3::before {
+        content: url();
+      }
+
+      .list-item::marker {
+        color: red;
+        font-size: 23px;
+      }
+
+      ::selection {
+        color: #753cde;
+        background-color: rgb(199, 206, 58);
+      }
+
+      dialog {
+        padding: 20px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      dialog::backdrop {
+        background: rgba(77, 72, 72, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Using ::first-line</h2>
+
+    <p>
+      You can use the ::first-line pseudo-element to add a special effect to the
+      first line of a text. Some more text. And even more, and more, and more,
+      and more, and more, and more, and more, and more, and more, and more, and
+      more, and more.
+    </p>
+
+    <h3>This is a heading using ::before and ::after pseudo selector</h3>
+
+    <h2>Using ::marker</h2>
+
+    <ul class="unordered-list">
+      <li class="list-item">Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+
+    <ol>
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+    </ol>
+
+    <button onclick="dlg.showModal()">Open Modal</button>
+
+    <dialog id="dlg">
+      <h3>Delete Item?</h3>
+      <p>This action cannot be undone.</p>
+      <button onclick="dlg.close()">Cancel</button>
+      <button onclick="dlgsuccess.showModal()">Delete</button>
+    </dialog>
+
+    <dialog id="dlgsuccess">
+      <p>Your Item deleted Successfully</p>
+      <button onclick="dlgsuccess.close();dlg.close()">Okay</button>
+    </dialog>
+  </body>
+</html>

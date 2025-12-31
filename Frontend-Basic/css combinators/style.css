@@ -1,0 +1,81 @@
+/* There are four different combinators in CSS:
+
+Descendant combinator (space)
+Child combinator (>)
+Next sibling combinator (+)
+Subsequent-sibling combinator (~) */
+
+/* The descendant combinator matches all elements that are descendants (children, grandchildren, etc.) of a specified element. */
+/* .space-combinator p {
+    background-color: yellowgreen;
+} */
+
+/* The child combinator selects all elements that are direct children of a specified element. */
+/* .space-combinator > p {
+    background-color: yellowgreen;
+} */
+
+/* section + p {
+    background-color: aqua;
+} */
+
+/* div ~ p { 
+    background-color: aquamarine;
+} */
+
+
+/* A CSS pseudo-class is a keyword that can be added to a selector, to define a style for a special state of an element.
+
+Some common use for pseudo-classes:
+
+Style an element when a user moves the mouse over it
+Style visited and unvisited links differently
+Style an element when it gets focus
+Style valid/invalid/required/optional form elements
+Style an element that is the first child of its parent */
+
+/* unvisited link */
+a:link {
+  color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+  color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+  color: #0000FF;
+}
+
+div.pseudo:hover {
+    background-color: aquamarine;
+}
+
+input:hover{
+    background-color: aliceblue;
+}
+
+input:focus{
+    background-color: bisque;
+}
+
+.magic {
+    display: none;
+    background-color: blueviolet;
+    padding: 20px;
+}
+
+.pseudo:hover p {
+    display: block;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

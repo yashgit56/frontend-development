@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      .box {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .grandparent {
+        padding: 40px;
+        background: #ffb3b3;
+      }
+
+      .parent {
+        padding: 30px;
+        background: #b3d9ff;
+      }
+
+      .child {
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      /* scale effect */
+      .active {
+        transform: scale(1.08);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandparent">
+      Grandparent
+      <div id="parent">
+        Parent
+        <button id="child">Child</button>
+      </div>
+    </div>
+
+    <h3>Event Order:</h3>
+    <ul id="output"></ul>
+    <script>
+      function animate(element, delay) {
+        setTimeout(() => {
+          element.classList.add("active");
+
+          setTimeout(() => {
+            element.classList.remove("active");
+          }, 300);
+        }, delay);
+      }
+
+      const grandparent = document.getElementById("grandparent");
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      // CAPTURING (Top → Down)
+      grandparent.addEventListener(
+        "click",
+        () => animate(grandparent, 0),
+        true
+      );
+
+      parent.addEventListener("click", () => animate(parent, 200), true);
+
+      child.addEventListener("click", () => animate(child, 400), true);
+
+      // BUBBLING (Bottom → Up)
+      child.addEventListener("click", () => animate(child, 600));
+      parent.addEventListener("click", () => animate(parent, 800));
+      grandparent.addEventListener("click", () => animate(grandparent, 1000));
+    </script>
+  </body>
+</html>

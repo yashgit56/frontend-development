@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="space">
+      <h2>Descendant Combinator (space)</h2>
+
+      <p>
+        The descendant combinator (space) matches all elements that are
+        descendants (children, grandchildren, etc.) of a specified element.
+      </p>
+      <p>The following example selects all p elements inside div elements:</p>
+
+      <div class="space-combinator">
+        <p>Paragraph 1 in the div.</p>
+        <p>Paragraph 2 in the div.</p>
+        <section><p>Paragraph 3 in the div.</p></section>
+        <p>Paragraph 4 in the div.</p>
+      </div>
+
+      <p>Paragraph 4. Not in a div.</p>
+      <p>Paragraph 5. Not in a div.</p>
+    </div>
+    <div class="pseudo">
+      <h2>Styling a link depending on state</h2>
+
+      <p class="magic">
+        <b
+          ><a
+            href="https://chatgpt.com/c/694b7605-e884-8321-8895-f638b0ac78a8"
+            target="_blank"
+            >This is a link</a
+          ></b
+        >
+      </p>
+      <p>
+        <b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS
+        definition in order to be effective.
+      </p>
+      <p>
+        <b>Note:</b> a:active MUST come after a:hover in the CSS definition in
+        order to be effective.
+      </p>
+      <input
+        type="text"
+        placeholder="enter some text..."
+        autofocus
+        autocomplete="true"
+      />
+    </div>
+  </body>
+</html>
