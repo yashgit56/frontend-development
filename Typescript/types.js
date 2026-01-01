@@ -1,60 +1,40 @@
 // TypeScript is a syntactic superset of JavaScript which adds static typing.
-
+var _a;
 // This basically means that TypeScript adds syntax on top of JavaScript, allowing developers to add types.
-
 // Why should I use TypeScript?
 // JavaScript is a loosely typed language.
-
 // It can be difficult to understand what types of data are being passed around in JavaScript.
-
 // In JavaScript, function parameters and variables don't have any information!
-
 // So developers need to look at documentation, or guess based on the implementation.
-
 // TypeScript allows specifying the types of data being passed around within the code, and has the ability to report errors when the types don't match.
-
 // For example, TypeScript will report an error when passing a string into a function that expects a number.
-
 // JavaScript will not.
-
-
 // Typescript uses compile type type checking 
 // it transpiles the typescript code into javascript at runtime 
-
-let temp: string = "Hello World";
-console.log("Temp: ",temp);
-
+var temp = "Hello World";
+console.log("Temp: ", temp);
 //boolean 
-let isActive : boolean = true;
-let hasPermission = false;
-
+var isActive = true;
+var hasPermission = false;
 console.log("isActive type: ", typeof isActive);
 console.log("hasPermission type: ", typeof hasPermission);
-
 // number 
-let decimal: number = 6;
-let hex: number = 0xf00d;       // Hexadecimal
-let binary: number = 0b1010;     // Binary
-let octal: number = 0o744;      // Octal
-let float: number = 3.14;   
-
-
+var decimal = 6;
+var hex = 0xf00d; // Hexadecimal
+var binary = 10; // Binary
+var octal = 484; // Octal
+var float = 3.14;
 // string 
-let color: string = "blue";
-let fullName: string = 'John Doe';
-let age: number = 30;
-let sentence: string = `Hello, my name is ${fullName} and I'll be ${age + 1} next year.`;
-
-// // bigint 
-// const bigNumber: bigint = 9007199254740991n;
-// const hugeNumber = BigInt(9007199254740991); // Alternative syntax
-
+var color = "blue";
+var fullName = 'John Doe';
+var age = 30;
+var sentence = "Hello, my name is ".concat(fullName, " and I'll be ").concat(age + 1, " next year.");
+// bigint 
+var bigNumber = 9007199254740991n;
+var hugeNumber = BigInt(9007199254740991); // Alternative syntax
 // symbol 
-
-const uniqueKey: symbol = Symbol('description');
-const obj = {
-  [uniqueKey]: 'This is a unique property'
-};
+var uniqueKey = Symbol('description');
+var obj = (_a = {},
+    _a[uniqueKey] = 'This is a unique property',
+    _a);
 console.log(obj[uniqueKey]); // "This is a unique property"
-
-// Use explicit types for function parameters and return types to make your code more maintainable and self-documenting.
