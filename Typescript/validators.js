@@ -1,0 +1,18 @@
+/// <reference path="./validation.ts" />
+/// <reference path="./LettersOnlyValidator.ts" />
+/// <reference path="./ZipCodeValidator.ts" />
+var _a;
+// Some samples to try
+var strings = ["Hello", "98052", "101"];
+// Validators to use
+var validators = {};
+validators["ZIP code"] = new Validation.ZipCodeValidator();
+validators["Letters only"] = new Validation.LettersOnlyValidator();
+// Show whether each string passed each validator
+for (var _i = 0, strings_1 = strings; _i < strings_1.length; _i++) {
+    var s = strings_1[_i];
+    for (var name_1 in validators) {
+        var isMatch = (_a = validators[name_1]) === null || _a === void 0 ? void 0 : _a.isAcceptable(s);
+        console.log("'".concat(s, "' ").concat(isMatch ? "matches" : "does not match", " '").concat(name_1, "'."));
+    }
+}
