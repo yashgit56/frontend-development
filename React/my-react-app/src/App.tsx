@@ -2,6 +2,8 @@ import "./App.css";
 import { lazy, Suspense, useEffect, useState } from "react";
 import type { User, Role } from "./constants";
 import Modal from "./components/Modal";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n/i18n";
 
 const UserRow = lazy(() => import("./components/UserRow"));
 // import Test from "./components/Test";
@@ -12,6 +14,7 @@ function App() {
   // const [name, setName] = useState<string>("");
   // const [email, setEmail] = useState<string>("");
   const [role, setRole] = useState<Role>("Admin");
+  const { t } = useTranslation();
   // use single field instead of multiple states
   const [inputs, setInputs] = useState<{ name: string; email: string }>({
     name: "",
@@ -22,6 +25,10 @@ function App() {
     const name = e.target.name;
     const value = e.target.value;
     setInputs((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const changeLanguage = (lang: string) => {
+    i18n.changeLanguage(lang);
   };
 
   const usersData: User[] = [
@@ -116,11 +123,11 @@ function App() {
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th>{t("table.name")}</th>
+                <th>{t("table.email")}</th>
+                <th>{t("table.role")}</th>
+                <th>{t("table.status")}</th>
+                <th>{t("table.actions")}</th>
               </tr>
             </thead>
 
@@ -164,16 +171,22 @@ function App() {
               setRole(e.target.value as Role)
             }
           >
-            <option value="Admin">Admin</option>
-            <option value="User">User</option>
+            <option value="Admin">{t("role.Admin")}</option>
+            <option value="User">{t("role.User")}</option>
           </select>
           <button type="submit">Add</button>
         </form>
       </div>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <button onClick={() => setIsOpen(true)}>Change Language</button>
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-        <h2>Modal Content</h2>
-        <p>This content is rendered outside the App component!</p>
+        <select
+          value={i18n.language}
+          onChange={(e) => changeLanguage(e.target.value)}
+          style={{ padding: "6px", marginBottom: "12px" }}
+        >
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+        </select>
       </Modal>
     </>
   );

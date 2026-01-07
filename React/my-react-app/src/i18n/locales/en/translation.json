@@ -1,0 +1,21 @@
+{
+  "table": {
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "actions": "Actions"
+  },
+  "role": {
+    "Admin": "Admin",
+    "User": "User"
+  },
+  "status": {
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "actions": {
+    "update": "update",
+    "delete": "delete"
+  }
+}

@@ -11,17 +11,13 @@ import CarProduct from "./pages/CarProduct";
 
 function App() {
   const [count, setCount] = useState(0);
-  const renderCount = useRef<number>(0);
-
-  useEffect(() => {
-    renderCount.current += 1;
-  });
+  // const renderCount = useRef<number>(0);
 
   return (
     <>
-      <h1> Count: {renderCount.current}</h1>
+      <h1> Count: {count}</h1>
 
-      {/* <button onClick={}> Add </button> */}
+      <button onClick={() => setCount((count) => count + 1)}> Add </button>
       <nav>
         <Link to="/"> UseContext Example </Link> |{" "}
         <Link to="/about">UseReducer Example</Link> |{" "}
